@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+
+.blurhash-wrapper {
+  height: 200px;
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.imgEx {
+  width: 100vw;
+  height: 30vh;
+  overflow: visible;
+}

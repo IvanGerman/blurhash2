@@ -1,0 +1,18 @@
+h1, p {
+  font-family: Lato;
+}
+
+.blurhash-wrapper {
+  height: 200px;
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
