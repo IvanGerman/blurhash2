@@ -28,10 +28,14 @@ export default function App() {
   };
 
   console.log('hashUrl', hashUrl);
+  // let wdt = window.innerWidth / 2;
+  // let hgt = window.innerWidth / 4;
+  let wdt = 600;
+  let hgt = 300;
 
   return (
     <div className="blurhash-wrapper">
-      <Blurhash hash={hashUrl} width={600} height={300} />
+      <Blurhash hash={hashUrl} width={wdt} height={hgt} />
       <motion.img
         initial={{opacity: 0}}
         // style={{ height: imageLoading ? "6rem" : "auto" }}
@@ -45,8 +49,8 @@ export default function App() {
         src={Image1}
         
         // src={mountain}
-        width={600}
-        height={300}
+        width={wdt}
+        height={hgt}
       />
     </div>
   );
