@@ -3,8 +3,8 @@ h1, p {
 }
 
 .blurhash-wrapper {
-  height: 200px;
-  width: 300px;
+  height: 300px;
+  width: 600px;
   margin: 0 auto;
   position: relative;
   border-radius: 20px;

@@ -1,10 +1,15 @@
 import {encode} from 'blurhash';
+import Image1 from './bg2.jpg';
 
 const loadImage = async (src: string): Promise<HTMLImageElement> =>
   new Promise((resolve, reject) => {
     const img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = (...args) => reject(args);
+    img.onload = () => { console.log('resolve');
+    
+      resolve(img);
+    }
+    img.onerror = (...args) => reject(args); console.log('Image1--',Image1);
+    
     img.src = src;
     img.crossOrigin = 'Anonymous';
   });
@@ -22,7 +27,8 @@ const getImageData = (image: HTMLImageElement) => {
 };
 
 export const encodeImageToBlurhash = async (imageUrl: string) => {
-  const image = await loadImage(imageUrl);
+  const image = await loadImage(imageUrl); console.log('image--',image);
+  
   const imageData = getImageData(image);
   if (imageData) return encode(imageData.data, imageData.width, imageData.height, 4, 4);
   throw Error('There is no image data');

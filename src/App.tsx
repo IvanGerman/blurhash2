@@ -5,14 +5,17 @@ import {useEffect, useState} from 'react';
 import {encodeImageToBlurhash} from './encoder';
 import './style.css';
 
+import Image1 from './bg2.jpg';
+
+
 export default function App() {
-  const [hashUrl, setHashUrl] = useState('U27UC_Tg00D$.AW?E1nN00EA%4~7ISMw%2-p');
+  const [hashUrl, setHashUrl] = useState('UdHCAoRPXAxt?wM{t7ofS6ozRPWBM|t6V@j[');
   const [imageLoading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getHashUrl() {
       console.log('getHashUrl');
-      const hash = await encodeImageToBlurhash('https://images.unsplash.com/photo-1617854818583-09e7f077a156?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format');
+      const hash = await encodeImageToBlurhash(Image1);
       // const hash = await encodeImageToBlurhash(mountain);
       setHashUrl(hash);
     }
@@ -28,7 +31,7 @@ export default function App() {
 
   return (
     <div className="blurhash-wrapper">
-      <Blurhash hash={hashUrl} width={300} height={200} />
+      <Blurhash hash={hashUrl} width={600} height={300} />
       <motion.img
         initial={{opacity: 0}}
         // style={{ height: imageLoading ? "6rem" : "auto" }}
@@ -39,11 +42,11 @@ export default function App() {
         loading="lazy"
         onLoad={onLoaded}
         className="image"
-        src="https://images.unsplash.com/photo-1617854818583-09e7f077a156?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format"
+        src={Image1}
         
         // src={mountain}
-        width={300}
-        height={200}
+        width={600}
+        height={300}
       />
     </div>
   );
